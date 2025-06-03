@@ -18,7 +18,7 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="iPostema - Werkplaats Management App">
+  <meta name="description" content="iPostema - Professional Werkplaats Management App">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- iOS meta tags & icons -->
@@ -31,7 +31,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>iPostema - Werkplaats App</title>
+  <title>iPostema - Professional Werkplaats App</title>
   <link rel="manifest" href="manifest.json">
   
   <style>
@@ -48,6 +48,7 @@
       text-align: center;
       color: white;
       padding: 20px;
+      max-width: 400px;
     }
     .logo {
       width: 80px;
@@ -91,11 +92,21 @@
       opacity: 0.8;
       margin: 15px 0;
       line-height: 1.4;
+      text-align: left;
     }
     .version {
       font-size: 12px;
       opacity: 0.7;
       margin-top: 20px;
+    }
+    .new-badge {
+      background: #ff4444;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-size: 10px;
+      font-weight: bold;
+      margin-left: 5px;
     }
     #flutter_bootstrap_loading {
       display: block;
@@ -106,16 +117,21 @@
   <div id="flutter_bootstrap_loading" class="loading-container">
     <div class="logo">🔧</div>
     <div class="title">iPostema</div>
-    <div class="subtitle">Werkplaats Management</div>
+    <div class="subtitle">Professional Werkplaats Management</div>
     <div class="features">
       🔥 Cloud synchronisatie<br>
       📦 Archivering functionaliteit<br>
       🚗 RDW kenteken lookup<br>
-      👥 Team samenwerking
+      🛢️ Kroon-Oil motorolie info <span class="new-badge">NEW</span><br>
+      📅 Team agenda & vakantie <span class="new-badge">NEW</span><br>
+      🔐 Beveiligde login voor Nick <span class="new-badge">NEW</span><br>
+      👥 Cross-editing monteurs <span class="new-badge">NEW</span><br>
+      📝 Edit logging systeem <span class="new-badge">NEW</span><br>
+      👨‍🔧 Gastmonteur ondersteuning <span class="new-badge">NEW</span>
     </div>
     <div class="spinner"></div>
-    <div style="font-size: 14px; margin-top: 10px;">App wordt geladen...</div>
-    <div class="version">v2.1 - Firebase gefixt! 🎉</div>
+    <div style="font-size: 14px; margin-top: 10px;">Professional app wordt geladen...</div>
+    <div class="version">v3.0 - Mega Update! 🚀</div>
   </div>
   
   <script src="flutter_bootstrap.js" async></script>
