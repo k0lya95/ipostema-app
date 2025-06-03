@@ -19,10 +19,12 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="iPostema - Werkplaats Management App">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="iPostema">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
@@ -35,26 +37,105 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-    }
-    .loading {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Roboto', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      font-family: 'Roboto', sans-serif;
-      color: #2196F3;
+      min-height: 100vh;
+    }
+    .loading-container {
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+      background: white;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      color: #667eea;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .spinner {
+      border: 3px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top: 3px solid white;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .subtitle {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+    .features {
+      font-size: 13px;
+      opacity: 0.8;
+      margin: 15px 0;
+      line-height: 1.4;
+    }
+    .version {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-top: 20px;
+    }
+    #flutter_bootstrap_loading {
+      display: block;
     }
   </style>
 </head>
 <body>
-  <div class="loading">
-    <div>
-      <h2>🔧 iPostema Loading...</h2>
-      <p>Werkplaats Management App</p>
+  <div id="flutter_bootstrap_loading" class="loading-container">
+    <div class="logo">🔧</div>
+    <div class="title">iPostema</div>
+    <div class="subtitle">Werkplaats Management</div>
+    <div class="features">
+      🔥 Cloud synchronisatie<br>
+      📦 Archivering functionaliteit<br>
+      🚗 RDW kenteken lookup<br>
+      👥 Team samenwerking
     </div>
+    <div class="spinner"></div>
+    <div style="font-size: 14px; margin-top: 10px;">App wordt geladen...</div>
+    <div class="version">v2.1 - Firebase gefixt! 🎉</div>
   </div>
+  
   <script src="flutter_bootstrap.js" async></script>
+  
+  <script>
+    // Hide loading screen when Flutter is ready
+    window.addEventListener('flutter-first-frame', function () {
+      const loading = document.getElementById('flutter_bootstrap_loading');
+      if (loading) {
+        loading.style.display = 'none';
+      }
+    });
+    
+    // Fallback: Hide loading after 10 seconds
+    setTimeout(function() {
+      const loading = document.getElementById('flutter_bootstrap_loading');
+      if (loading) {
+        loading.style.display = 'none';
+      }
+    }, 10000);
+  </script>
 </body>
 </html>
